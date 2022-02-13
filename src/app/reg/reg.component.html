@@ -1,0 +1,18 @@
+<main>
+  <form style="height: 600px">
+    <div class="profile_wrap">
+      <div class="profile_elem">
+        <p>Имя: </p><input id="name" type="text" [(ngModel)]="customer.name" name="name"></div>
+      <div class="profile_elem">
+        <p>Фамилия: </p><input id="surname" type="text" [(ngModel)]="customer.surname" name="surname"></div>
+      <div class="profile_elem"
+           title="Номер телефона начинается с +7 или 8, может содержать скобки вокруг кода города">
+        <p>Логин: </p><input id="number" type="text" [(ngModel)]="customer.login" name="number"></div>
+      <div class="profile_elem">
+        <p>Почта: </p><input id="post" type="email" [(ngModel)]="customer.email" name="email"></div>
+      <div class="profile_elem">
+        <p>Пароль: </p><input id="password" type="password" [(ngModel)]="customer.password" name="password"></div>
+      <input type="submit" value="Зарегистрироваться" (click)="reg()">
+    </div>
+  </form>
+</main>

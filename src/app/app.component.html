@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru" style="left: 0;">
+<head>
+  <meta charset="utf-8"/>
+  <title>Магазин электроники</title>
+  <script>
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+      console.log("scroll");
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  </script>
+</head>
+<body>
+<app-title></app-title>
+<div style="margin-top:20px;margin-bottom:20px;padding: 20px;">
+  <router-outlet></router-outlet>
+</div>
+<footer>Абрамов Кирилл 6413</footer>
+</body>
+</html>

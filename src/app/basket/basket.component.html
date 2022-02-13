@@ -1,0 +1,20 @@
+<main style="">
+  <div>
+    <div style="display: inline">
+      <div>
+        <input class="button" type="button" (click)="buy()" value="Купить">
+        <table border="1">
+          <caption>Каталог</caption>
+          <tr>
+            <th>Название</th>
+            <th>Фото</th>
+            <th>Производитель</th>
+            <th>Цена</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let line of products" [app-basket-item]="line"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

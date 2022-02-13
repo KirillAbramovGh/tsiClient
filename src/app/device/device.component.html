@@ -1,0 +1,15 @@
+<main>
+  <div style="min-height: 800px">
+    <section style="margin: 0;
+    padding: 4px;">
+      <img class="main_image" src="{{product.imgPath}}">
+      <div style="display: inline;
+    margin-right: 5px;
+    padding: 3px;">
+        <h1>Название: {{product.name}}</h1>
+        <div [innerHTML]="product.description" ></div>
+        <input type="button" (click)="clickAddButton(product)" value="Купить">
+      </div>
+    </section>
+  </div>
+</main>

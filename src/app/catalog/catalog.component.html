@@ -1,0 +1,47 @@
+<main>
+  <div>
+    <section class="search_wrap">
+      <input class="search" type="text" [(ngModel)]="search"><input type="button" (click)="reload()" value="Поиск">
+      <div>
+        Цена:
+        <input type="button" (click)="sort = 'priceDown'" value="↓">
+        <input type="button" (click)="sort = 'priceUp'" value="↑">
+      </div>
+      <div>
+        Имя:
+        <input type="button" (click)="sort = 'nameDown'" value="↓">
+        <input type="button"(click)="sort = 'nameUp'" value="↑">
+      </div>
+    </section>
+    <div class="catalog_wrap">
+      <div class="filter">
+        <p>Фильтрация по цене</p>
+
+        <input type="number" [(ngModel)]="minPrice" value="цена от">
+        <input type="number" [(ngModel)]="maxPrice" value="цена до">
+
+        <p>Фильтрация по производителю</p>
+        <div><p (click)="change()"><input type="checkbox" [(ngModel)]="apple" name="Apple" > Apple</p></div>
+        <div><p (click)="change()"><input type="checkbox" [(ngModel)]="xiaomi" (click)="change()" name="Xiaomi"> Xiaomi</p></div>
+        <div><p (click)="change()"><input type="checkbox" [(ngModel)]="lenovo" (click)="change()" name="Lenovo"> Lenovo</p></div>
+        <div><p (click)="change()"><input type="checkbox" [(ngModel)]="asus" (click)="change()" name="Asus"> Asus</p></div>
+        <input type="button" (click)="reload()" value="Применить">
+      </div>
+      <div class="catalog_elem">
+        <table id="catalog_table" border="0">
+          <caption>Каталог</caption>
+          <tr bgcolor="#696969">
+            <th>Название</th>
+            <th>Фото</th>
+            <th>Производитель</th>
+            <th>Цена</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let line of products" [app-tr]="line"></tr>
+
+        </table>
+        <a href="catalog/#" title="Вернуться к началу" class="topbutton">Наверх</a>
+      </div>
+    </div>
+  </div>
+</main>

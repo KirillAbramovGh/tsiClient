@@ -1,0 +1,10 @@
+<td><a routerLink="{{'/product/'+product.id}}">{{product.name}}</a></td>
+  <td>
+    <div class="container">
+      <img class="image" src="{{product.imgPath}}">
+<!--      <div class="overlay">256gb | 512gb</div>-->
+    </div>
+  </td>
+  <td>{{product.companyId}}</td>
+  <td>{{product.price}}</td>
+  <td><input type="button" (click)="clickAddButton(product)" value="Добавить в корзину"></td>
